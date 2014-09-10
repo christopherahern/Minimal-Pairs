@@ -1,0 +1,17 @@
+1. To get the data in the desired format enter the following at the command line:
+	$ ./data.sh
+	
+	This will download Subtlex and CMUdict it will output two files:
+	-cmudict: a pronunciation dictionary containing only those words that have frequency info in subtlex
+	-subtlex: word, dominant part-of-speech, and frequency of dominant pos
+	
+2. To get minimal pairs do the following:
+	$ python
+	
+	>>> from min_pairs import *
+	>>> subtlex = get_corpus('subtlex')
+	>>> cmudict = get_dictionary('cmudict', subtlex.keys())
+	# Get minimal pairs for the COT-CAUGHT distinction
+	>>> get_minimal_pairs('AO', 'AA', cmudict, subtlex, post_exclude=['R']) 
+	# Get minimal pairs for the PIN-PEN merger
+	>>> get_minimal_pairs('IH', 'EH', cmudict, subtlex, post_include=['N', 'M', 'NG']) 
