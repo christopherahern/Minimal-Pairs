@@ -1,13 +1,34 @@
-1. To get the data in the desired format enter the following at the command line:
+# Introduction
+
+This repository contains code for generating minimal pairs from a pronunciation
+dictionary. 
+
+# Instructions
+
+## Data
+
+To get the data in the desired format enter the following at the command line:
+
     ./data.sh
 
-	-Download a version of the Subtlex corpus with part-of-speech tags
-	-Download a version of the Cmudict pronunciation dictionary
-	-Get the frequency and dominant part-of-speech for content words from Subtlex
-	-Remove punctuation, stress, and variant information from Cmudict
-	-Create a list of words found in both Cmudict and Subtlex	
-	-cmudict is a revised pronunciation dictionary containing only words that have frequency info in subtlex
-	-subtlex is a list of words with the frequency of the most dominant part-of-speech
+This will do several things:
+
+* Download a version of the Subtlex corpus with part-of-speech tags
+* Download a version of the Cmudict pronunciation dictionary
+* Get the frequency and dominant part-of-speech for content words from Subtlex
+* Remove punctuation, stress, and variant information from Cmudict
+* Create a list of words found in both Cmudict and Subtlex	
+
+The output files are the following: 
+
+* cmudict is a revised pronunciation dictionary containing only words that have
+ frequency info in subtlex
+* subtlex is a list of words with the frequency of the most dominant 
+part-of-speech
+
+These revised versions 
+
+## Items 
 	
 2. To get minimal pairs do the following from the command line:
 	$ python
