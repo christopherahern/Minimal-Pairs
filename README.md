@@ -35,11 +35,13 @@ number of words that have frequencies. For example, compare:
 ## Items 
 	
 To get minimal pairs do the following from the command line:
+
     from min_pairs import *
     subtlex = get_corpus('subtlex')
     cmudict = get_dictionary('cmudict', subtlex.keys())
 
 We can get the minimal pairs relevant to particular mergers:
+
     # Get minimal pairs for the COT-CAUGHT distinction
     get_minimal_pairs('AO', 'AA', cmudict, subtlex, post_exclude=['R']) 
     # Get minimal pairs for the PIN-PEN merger
